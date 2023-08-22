@@ -11,6 +11,7 @@ import Ex8Calculator from "./component/Ex8Calculator";
 import Ex9Home from "./component/Ex9Home";
 import Ex9LogIn from "./component/Ex9LogIn";
 import Ex10ToDoApp from "./component/Ex10ToDoApp";
+import Ex11StudentManager from "./component/Ex11StudentManager";
 
 function App() {
     return (
@@ -49,6 +50,9 @@ function App() {
                 <li>
                     <Link to={'/ex10'}>Ex10: To do App</Link>
                 </li>
+                <li>
+                    <Link to={'/ex11'}>Ex11: Student Manager</Link>
+                </li>
             </ul>
 
             <Routes>
@@ -63,6 +67,7 @@ function App() {
                 <Route path={'/ex9/login'} element={<Ex9LogIn/>}/>
                 <Route path={'/ex9/home'} element={<Ex9Home/>}/>
                 <Route path={'/ex10'} element={<Ex10ToDoApp/>}/>
+                <Route path={'/ex11'} element={<Ex11StudentManager/>}/>
             </Routes>
         </>
     );

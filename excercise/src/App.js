@@ -12,6 +12,7 @@ import Ex9Home from "./component/Ex9Home";
 import Ex9LogIn from "./component/Ex9LogIn";
 import Ex10ToDoApp from "./component/Ex10ToDoApp";
 import Ex11StudentManager from "./component/Ex11StudentManager";
+import {Ex12Counter} from "./component/Ex12Counter";
 
 function App() {
     return (
@@ -53,6 +54,9 @@ function App() {
                 <li>
                     <Link to={'/ex11'}>Ex11: Student Manager</Link>
                 </li>
+                <li>
+                    <Link to={'/ex12'}>Ex12: Counter</Link>
+                </li>
             </ul>
 
             <Routes>
@@ -68,6 +72,7 @@ function App() {
                 <Route path={'/ex9/home'} element={<Ex9Home/>}/>
                 <Route path={'/ex10'} element={<Ex10ToDoApp/>}/>
                 <Route path={'/ex11'} element={<Ex11StudentManager/>}/>
+                <Route path={'/ex12'} element={<Ex12Counter/>}/>
             </Routes>
         </>
     );

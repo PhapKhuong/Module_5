@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How reander GUI</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+<script>
+
+    // DOI VOI DOM
+    // RENDER THE H1 RA GIAO DIEN NGUOI DUNG
+    let h1Tag = document.createElement('h1') //Tao the h1
+    h1Tag.innerText = "Render h1 tag to desktop" //Tao noi dung the h1
+    //Dat thuoc tinh cho cac element
+    h1Tag.id = 'title'
+    h1Tag.className = 'heading'
+    // h1Tag.style = 'font: Arial; color: red'
+    Object.assign(h1Tag.style, {
+        color: 'red',
+        backgroundColor: 'blue'
+    })
+    document.body.appendChild(h1Tag) //Den cau lenh nay moi hien thi the h1 ra giao dien nguoi dung
+
+    // RENDER DOI TUONG CO ID LA ROOT RA GIAO DIEN NGUOI DUNG
+    let rootContent = document.getElementById('root')
+    rootContent.innerHTML = '<h2>Render root element to desktop</h2>' //Tao noi dung cho root
+    root.appendChild(rootContent) //Hien thi root ra giao dien nguoi dung
+
+    //==============================================================================================
+    // DOI VOI REACT (THU VIEN REACT KHONG BAO GOM RENDER, VI VAY CAN CO THEM THU VIEN REACT-DOM)
+    // React(type, props, ...children)
+    let h1React = React.createElement('h1', {
+        id: 'reactTitle',
+        className: 'heading'
+    }, 'Render react element ra giao dien nguoi dung')
+
+    //==============================================================================================
+    // VI DU
+    // DOM
+    let ulDOM = document.createElement('ul')
+    let liDOM1 = document.createElement('li')
+    liDOM1.innerText = 'Phap'
+    let liDOM2 = document.createElement('li')
+    liDOM2.innerText = 'Thanh'
+    ulDOM.appendChild(liDOM1)
+    ulDOM.appendChild(liDOM2)
+    document.body.append(ulDOM)
+
+    // React
+    let ulReact = React.createElement('ul',
+        null,
+        React.createElement('li', null, 'Phap'),
+        React.createElement('li', null, 'Thanh')
+    )
+
+    ReactDom.render(ulReact, root) //Render react ra giao dien
+
+</script>
+
+</html>

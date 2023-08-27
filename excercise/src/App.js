@@ -1,5 +1,6 @@
 import {Routes, Route, Link} from 'react-router-dom';
 import './App.css';
+import "react-toastify/dist/ReactToastify.css";
 import {Ex1ES6} from "./component/Ex1ES6";
 import Ex2Fibonacci from "./component/Ex2Fibonacci";
 import Ex3BrowserDetail from "./component/Ex3BrowserDetail";
@@ -13,6 +14,12 @@ import Ex9LogIn from "./component/Ex9LogIn";
 import Ex10ToDoApp from "./component/Ex10ToDoApp";
 import Ex11StudentManager from "./component/Ex11StudentManager";
 import {Ex12Counter} from "./component/Ex12Counter";
+import ContactList from "./component/contacts/ContactList";
+import AddContact from "./component/contacts/AddContact";
+import {ToastContainer} from "react-toastify";
+import React from "react";
+import {Provider} from "react-redux";
+import store from "./redux/store";
 
 function App() {
     return (
@@ -57,23 +64,34 @@ function App() {
                 <li>
                     <Link to={'/ex12'}>Ex12: Counter</Link>
                 </li>
+                <li>
+                    <Link to={'/contact'}>Contact</Link>
+                </li>
+                <li>
+                    <Link to={'/add-contact'}>Add new contact</Link>
+                </li>
             </ul>
+            <Provider store={store}>
+                <Routes>
+                    <Route path={'/ex1'} element={<Ex1ES6/>}/>
+                    <Route path={'/ex2'} element={<Ex2Fibonacci/>}/>
+                    <Route path={'/ex3'} element={<Ex3BrowserDetail/>}/>
+                    <Route path={'/ex4'} element={<Ex4Student/>}/>
+                    <Route path={'/ex5'} element={<Ex5ProfileCard/>}/>
+                    <Route path={'/ex6'} element={<Ex6SignIn/>}/>
+                    <Route path={'/ex7'} element={<Ex7Alert/>}/>
+                    <Route path={'/ex8'} element={<Ex8Calculator/>}/>
+                    <Route path={'/ex9/login'} element={<Ex9LogIn/>}/>
+                    <Route path={'/ex9/home'} element={<Ex9Home/>}/>
+                    <Route path={'/ex10'} element={<Ex10ToDoApp/>}/>
+                    <Route path={'/ex11'} element={<Ex11StudentManager/>}/>
+                    <Route path={'/ex12'} element={<Ex12Counter/>}/>
+                    <Route path={'/contact'} element={<ContactList/>}/>
+                    <Route path={'/add-contact'} element={<AddContact/>}/>
+                </Routes>
+            </Provider>
+            <ToastContainer/>
 
-            <Routes>
-                <Route path={'/ex1'} element={<Ex1ES6/>}/>
-                <Route path={'/ex2'} element={<Ex2Fibonacci/>}/>
-                <Route path={'/ex3'} element={<Ex3BrowserDetail/>}/>
-                <Route path={'/ex4'} element={<Ex4Student/>}/>
-                <Route path={'/ex5'} element={<Ex5ProfileCard/>}/>
-                <Route path={'/ex6'} element={<Ex6SignIn/>}/>
-                <Route path={'/ex7'} element={<Ex7Alert/>}/>
-                <Route path={'/ex8'} element={<Ex8Calculator/>}/>
-                <Route path={'/ex9/login'} element={<Ex9LogIn/>}/>
-                <Route path={'/ex9/home'} element={<Ex9Home/>}/>
-                <Route path={'/ex10'} element={<Ex10ToDoApp/>}/>
-                <Route path={'/ex11'} element={<Ex11StudentManager/>}/>
-                <Route path={'/ex12'} element={<Ex12Counter/>}/>
-            </Routes>
         </>
     );
 }

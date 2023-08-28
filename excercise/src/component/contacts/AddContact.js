@@ -63,7 +63,7 @@ function AddContact() {
 
                     <div className="mb-3">
                         <label htmlFor="message">Message</label>
-                        <textarea className="form-control" id="message" name="message"/>
+                        <Field as="textarea" className="form-control" id="message" name="message"/>
                     </div>
                     <button type="submit" className="btn btn-outline-success">Submit</button>
                 </Form>

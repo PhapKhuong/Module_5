@@ -20,6 +20,7 @@ import {ToastContainer} from "react-toastify";
 import React from "react";
 import {Provider} from "react-redux";
 import store from "./redux/store";
+import {Ex14MedicalDeclaration} from "./component/Ex14MedicalDeclaration";
 
 function App() {
     return (
@@ -70,6 +71,9 @@ function App() {
                 <li>
                     <Link to={'/add-contact'}>Add new contact</Link>
                 </li>
+                <li>
+                    <Link to={'/medical-declaration'}>Medical declaration</Link>
+                </li>
             </ul>
             <Provider store={store}>
                 <Routes>
@@ -88,10 +92,10 @@ function App() {
                     <Route path={'/ex12'} element={<Ex12Counter/>}/>
                     <Route path={'/contact'} element={<ContactList/>}/>
                     <Route path={'/add-contact'} element={<AddContact/>}/>
+                    <Route path={'/medical-declaration'} element={<Ex14MedicalDeclaration/>}/>
                 </Routes>
             </Provider>
             <ToastContainer/>
-
         </>
     );
 }
